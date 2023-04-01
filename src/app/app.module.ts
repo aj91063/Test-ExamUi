@@ -1,5 +1,7 @@
+import { AuthInterceptor } from './services/auth.interseptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,7 @@ import { HomeComponent } from './pages/home/home.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatIconModule} from '@angular/material/icon';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import {MatIconModule} from '@angular/material/icon';
     LoginComponent,
     HomeComponent,
     FooterComponent,
-   
+    DashboardComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatToolbarModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
