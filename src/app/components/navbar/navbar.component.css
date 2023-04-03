@@ -12,3 +12,14 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     line-height: 48px;
 }
+
+.field-margin-right{
+  margin-right: 20px;
+}
+
+.app-toolbar {
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+}

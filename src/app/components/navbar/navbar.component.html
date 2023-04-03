@@ -1,6 +1,22 @@
-<mat-toolbar style="background-color: #93d84e;">
+<mat-toolbar style="background-color: #93d84e;" class="app-toolbar">
     <span class="brand"><a  [routerLink]="''" style="text-decoration: none; color: #fff;"><b>OnExampur</b></a></span>
     <span class="example-spacer"></span>
-    <a mat-raised-button class="field-margin-right" type="button"  [routerLink]="'/login'"
+    <a
+    *ngIf="!isLoggedIn"
+    mat-raised-button class="field-margin-right" type="button"  [routerLink]="'/login'"
     style=" background-color:#FF7E06; color:#fff;;"><mat-icon>login</mat-icon>Login</a>
+
+    <a
+    *ngIf="isLoggedIn && user"
+    mat-raised-button class="field-margin-right" type="button"
+    style=" background-color:#93d84e; color:#fff;;"><mat-icon>person</mat-icon>
+    {{login.getUser().username}}</a>
+
+    <a
+    *ngIf="isLoggedIn"
+    (click)="logout()"
+    mat-raised-button class="field-margin-right" type="button"
+    style=" background-color:#FF7E06; color:#fff;;"><mat-icon>logout</mat-icon>Logout</a>
+
+
   </mat-toolbar>
