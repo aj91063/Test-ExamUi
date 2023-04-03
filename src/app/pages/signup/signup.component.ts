@@ -1,3 +1,4 @@
+import { LoginService } from 'src/app/services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserServiceService } from 'src/app/services/user-service.service';
@@ -8,7 +9,7 @@ import Swal from 'sweetalert2'
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  constructor(private userService: UserServiceService, private snackBar: MatSnackBar) { }
+  constructor(private userService: UserServiceService, private snackBar: MatSnackBar, login:LoginService) { }
   ngOnInit(): void {
 
   }
@@ -21,6 +22,25 @@ export class SignupComponent implements OnInit {
     gender: '',
     phone: '',
     password: '',
+
+  }
+
+  userFormSubmit(){
+       //let oneusername:String[];
+       this.userService.getAllUser().subscribe((data:any)=>{
+
+          let flag=false;
+        data.forEach((value:any) => {
+          //console.log(value.username)
+             if(value.username == this.user.userName){
+              this.snackBar.open(`${this.user.userName} already exist !!`,"ok",{
+                duration:3000
+              })
+             }
+
+        });
+
+       });
 
   }
 
@@ -80,7 +100,7 @@ export class SignupComponent implements OnInit {
         duration: 3000,
         horizontalPosition: 'center'
       });
-      
+
     }
 
     else if (this.user.password == "" || this.user.password == null) {
@@ -108,7 +128,6 @@ export class SignupComponent implements OnInit {
 
        },
         (error) => {
-          console.error(error);
           this.snackBar.open("Something went wrong", 'ok', {
             duration: 3000,
             horizontalPosition: 'center'
@@ -117,7 +136,7 @@ export class SignupComponent implements OnInit {
      );
     }
 
-  
+
 
 }
 }

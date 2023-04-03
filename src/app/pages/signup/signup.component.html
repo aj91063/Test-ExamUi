@@ -20,7 +20,7 @@
 
                 <mat-form-field appearance="outline" class="full-width field-margin-right">
                     <mat-label>Username*</mat-label>
-                    <input [(ngModel)]="user.userName" name="userName" matInput placeholder="Placeholder" required>
+                    <input [(ngModel)]="user.userName"  name="userName" matInput placeholder="Placeholder" required>
                     <mat-hint style="color:red;" >*Username must be unique</mat-hint>
                 </mat-form-field>
 
@@ -41,7 +41,7 @@
                     <mat-label>Phone Number*</mat-label>
                     <input [(ngModel)]="user.phone" name="phone" type="number" matInput placeholder="Placeholder" required>
                 </mat-form-field>
-                
+
                 <mat-form-field appearance="outline" class="full-width field-margin-right">
                     <mat-label>Password*</mat-label>
                     <input [(ngModel)]="user.password" name="password" type="password" matInput placeholder="Placeholder" required>

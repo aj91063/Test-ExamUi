@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginService } from 'src/app/services/login.service';
 import { HttpClient, HttpResponse ,HttpHeaders} from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ loginData={
   userName:'',
   password:'',
 }
-  constructor(private snack:MatSnackBar, private login:LoginService){}
+  constructor(private snack:MatSnackBar, private login:LoginService, private router:Router){}
   ngOnInit():void{}
 
   loginFormSubmit(){
@@ -39,13 +40,31 @@ loginData={
    this.login.generateToken(this.loginData).subscribe(
     (data:any)=>{
           console.log("Success");
-          console.log(data.token);
+          //console.log(data.token);
           this.login.loginUser(data.token);
-          console.log("token set--->", localStorage.getItem('token'));
+         // console.log("token set--->", localStorage.getItem('token'));
           this.login.getCurrentUser().subscribe(
             (user:any)=>{
               this.login.setUser(user)
-              console.log(user);
+              //console.log(user);
+              //redirect to admin or user
+              if(this.login.getUserRole()=='ADMIN'){
+                // admin dashboard
+                //window.location.href='/admin';
+                this.login.loginStatusSubject.next(true);
+                this.router.navigate(['admin'])
+
+              }else if(this.login.getUserRole()=='NORMAL'){
+                // user dashboard
+               // window.location.href='/userDashboard';
+               this.login.loginStatusSubject.next(true);
+                this.router.navigate(['userDashboard'])
+              }
+              else{
+                this.login.logout();
+
+              }
+
             },
             (error)=>{
                console.log(error);
@@ -54,6 +73,9 @@ loginData={
     },(error)=>{
       console.log("error");
       console.error(error);
+      this.snack.open("Invalid details, Try again.",'ok',{
+        duration:3000
+      })
     }
    );
   }
