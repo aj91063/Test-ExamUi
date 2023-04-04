@@ -16,7 +16,7 @@ export class UserServiceService {
       return this.http.post(`${baseUrl}/api/user/create-user`,user);
   }
 
-  public getAllUser(){
-    return this.http.get(`${baseUrl}/api/user/`)
+  public getUserByUsername(username:any){
+    return this.http.get(`${baseUrl}/api/user/${username}`)
   }
 }

@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserServiceService } from 'src/app/services/user-service.service';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  constructor(private userService: UserServiceService, private snackBar: MatSnackBar, login:LoginService) { }
+  constructor(private userService: UserServiceService, private snackBar: MatSnackBar,public login:LoginService, private router:Router) { }
   ngOnInit(): void {
 
   }
@@ -17,7 +18,7 @@ export class SignupComponent implements OnInit {
   public user = {
     firstName: '',
     lastName: '',
-    userName: '',
+    username: '',
     email: '',
     gender: '',
     phone: '',
@@ -27,22 +28,18 @@ export class SignupComponent implements OnInit {
 
   userFormSubmit(){
        //let oneusername:String[];
-       this.userService.getAllUser().subscribe((data:any)=>{
-
-          let flag=false;
-        data.forEach((value:any) => {
-          //console.log(value.username)
-             if(value.username == this.user.userName){
-              this.snackBar.open(`${this.user.userName} already exist !!`,"ok",{
-                duration:3000
-              })
-             }
-
-        });
-
+       this.userService.getUserByUsername(this.user.username).subscribe(
+        (data:any)=>{
+          if(data != null){
+            this.snackBar.open(`${data.username} already exists, Try with anoter username.`,'ok',
+            {duration:4000,
+            })
+           }
        });
 
   }
+
+
 
   formSubmit() {
     const validRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -60,9 +57,8 @@ export class SignupComponent implements OnInit {
       });
       return;
     }
-    else if (this.user.userName == "" || this.user.userName == null) {
-      //alert("Field are required");
-      this.snackBar.open("Username is required", 'ok', {
+    else if (this.user.username.trim() == "" || this.user.username == null) {
+      this.snackBar.open("username is required", 'ok', {
         duration: 3000,
         horizontalPosition: 'center'
       });
@@ -111,29 +107,48 @@ export class SignupComponent implements OnInit {
     }
 
 
-   else {
-     this.userService.addUser(this.user).subscribe(
-       (data:any) => {
-         console.log(data);
-          this.snackBar.open("Account is created successfully", 'ok', {
-            duration: 3000,
-            horizontalPosition: 'center'
-          });
-          Swal.fire({
-            title: '',
-            text: `Account is created successfully. ${this.user.userName}`,
-            icon: 'success',
-            confirmButtonText: 'ok'
-          });
+    else {
+      this.userService.getUserByUsername(this.user.username).subscribe(
+        (data:any)=>{
+           if(data == null){
+            this.userService.addUser(this.user).subscribe(
+              (data:any) => {
 
-       },
-        (error) => {
-          this.snackBar.open("Something went wrong", 'ok', {
-            duration: 3000,
-            horizontalPosition: 'center'
-          });
-       }
-     );
+                 Swal.fire({
+                   title: '',
+                   text: `Account is created successfully. ${this.user.username}`,
+                   icon: 'success',
+                   confirmButtonText: 'Login',
+                   confirmButtonColor:'#FF7E06',
+                   cancelButtonColor:'#d33',
+                   showCancelButton:true
+                 }).then((result)=>{
+                        if(result.isConfirmed){
+                            this.router.navigate(["login"]);
+                        }
+                        else{
+                          this.router.navigate(['']);
+                        }
+                 });
+              },
+               (error) => {
+                 console.log(this.user)
+                 this.snackBar.open("Something went wrong", 'ok', {
+                   duration: 3000,
+                   horizontalPosition: 'center'
+                 });
+              }
+            );
+           }
+
+           else{
+               this.snackBar.open(`${data.username} already exists, Try with anoter username.`,'ok',
+               {duration:4000});
+           }
+       });
+
+
+
     }
 
 

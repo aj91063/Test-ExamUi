@@ -10,7 +10,7 @@
     *ngIf="isLoggedIn && user"
     mat-raised-button class="field-margin-right" type="button"
     style=" background-color:#93d84e; color:#fff;;"><mat-icon>person</mat-icon>
-    {{login.getUser().username}}</a>
+    {{login.getUser().username.toUpperCase()}}</a>
 
     <a
     *ngIf="isLoggedIn"

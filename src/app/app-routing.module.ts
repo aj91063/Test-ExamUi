@@ -7,6 +7,7 @@ import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -27,8 +28,13 @@ const routes: Routes = [
   {
     path: 'admin',
     component: DashboardComponent,
-    pathMatch:'full',
-    canActivate:[AdminGuard]
+    canActivate:[AdminGuard],
+    children:[
+      {
+        path:'profile',
+        component:ProfileComponent
+      }
+    ]
   },
   {
     path: 'userDashboard',

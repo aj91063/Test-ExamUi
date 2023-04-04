@@ -22,6 +22,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import {MatIconModule} from '@angular/material/icon';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +36,8 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     FooterComponent,
     DashboardComponent,
     UserDashboardComponent,
+    ProfileComponent,
+    SidebarComponent,
 
   ],
   imports: [
@@ -47,6 +53,8 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     HttpClientModule,
     MatToolbarModule,
     MatIconModule,
+    MatListModule,
+    MatCardModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
