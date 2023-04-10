@@ -48,7 +48,7 @@ loginData={
               this.login.setUser(user)
               //console.log(user);
               //redirect to admin or user
-              if(this.login.getUserRole()=='ADMIN'){
+              if(user.authorities[0].authority=='ADMIN'){
                 // admin dashboard
                 //window.location.href='/admin';
                 this.login.loginStatusSubject.next(true);

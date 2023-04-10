@@ -26,6 +26,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { ViewCategoryComponent } from './pages/admin/view-category/view-category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +41,8 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
     UserDashboardComponent,
     ProfileComponent,
     SidebarComponent,
+    WelcomeComponent,
+    ViewCategoryComponent,
 
   ],
   imports: [
@@ -54,7 +59,8 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
     MatToolbarModule,
     MatIconModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

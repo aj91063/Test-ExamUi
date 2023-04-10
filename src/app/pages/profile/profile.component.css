@@ -1,0 +1,24 @@
+.img-profile{
+ max-width: 150px;
+ max-height: 150px;
+ box-shadow: 1px 1px 3px 1px rgb(116, 115, 115);
+ border-radius: 50%;
+}
+.table{
+  width: 100%;
+  border-collapse: collapse;
+  font-weight: bold;
+  margin-bottom: 20px;
+
+}
+.table tr td{
+  padding: 10px 30px;
+  text-align: center;
+  text-transform: capitalize;
+  border: .5px solid #646161;
+}
+
+.center{
+  margin: 0 auto;
+  padding: 10px;
+}

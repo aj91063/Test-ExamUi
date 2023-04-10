@@ -1,1 +1,55 @@
-<p>profile works!</p>
+<mat-card>
+  <mat-card-content>
+    <h1 class="text-center" style="padding: 5px">Your Profile Details</h1>
+    <div class="bootstrap-wrapper">
+      <div class="container">
+        <div class="container text-center">
+          <img src="../../../assets/logo.png" class="img-profile" alt="" />
+          <h1 style="margin-top: 10px">{{userData.firstName+" "+userData.lastName}}</h1>
+        </div>
+        <div class="row">
+          <!-- {{user | json}} -->
+          <div class="col-md-10 offset-md-1">
+            <table class="table">
+              <tr>
+                <td>Username</td>
+                <td>{{userData.username}}</td>
+              </tr>
+              <tr>
+                <td>Role</td>
+                <td>{{userData.authorities[0].authority}}</td>
+                <!-- <td>dd</td> -->
+              </tr>
+              <tr>
+                <td>Gender</td>
+                <td>{{userData.gender}}</td>
+              </tr>
+              <tr>
+                <td>User ID</td>
+                <td *ngIf="userData.authorities[0].authority=='ADMIN'">{{userData.authorities[0].authority+"-0"+userData.id}}</td>
+                <td *ngIf="userData.authorities[0].authority=='NORMAL'">{{"Exam-0"+userData.id}}</td>
+              </tr>
+              <tr>
+                <td>Phone Number</td>
+                <td>{{userData.phone}}</td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>{{userData.email}}</td>
+              </tr>
+              <tr>
+                <td>Status</td>
+                <td *ngIf="userData.enabled">Active</td>
+                <td *ngIf="!userData.enabled">Deactive</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="center">
+    <button mat-raised-button color="primary">Update</button>
+    <button mat-raised-button style="background-color: #FF7E06; color: white; margin-left: 10px;">SHARE</button>
+  </mat-card-actions>
+</mat-card>
