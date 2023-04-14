@@ -39,8 +39,8 @@
               </tr>
               <tr>
                 <td>Status</td>
-                <td *ngIf="userData.enabled">Active</td>
-                <td *ngIf="!userData.enabled">Deactive</td>
+                <td *ngIf="userData.enabled"><p class="active">Active</p></td>
+                <td *ngIf="!userData.enabled"><p class="deactive">Deactive</p></td>
               </tr>
             </table>
           </div>

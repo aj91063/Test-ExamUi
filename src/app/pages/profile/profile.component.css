@@ -22,3 +22,21 @@
   margin: 0 auto;
   padding: 10px;
 }
+
+table tr:nth-child(even){
+  background-color: #719ed81f;
+}
+
+.active{
+  background-color: #86e49d;
+  border-radius: 1.5rem;
+  padding: .5rem 1rem;
+  color: #006b21;
+}
+
+.deactive{
+  background-color: #d863a3;
+  border-radius: 1.5rem;
+  padding: .5rem 1rem;
+  color: #b30021;
+}

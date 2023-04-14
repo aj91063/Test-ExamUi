@@ -29,6 +29,12 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { ViewCategoryComponent } from './pages/admin/view-category/view-category.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import {MatTableModule} from '@angular/material/table';
+import { UsertableComponent } from './pages/admin/usertable/usertable.component';
+import {MatTableDataSource} from '@angular/material/table';
+import { UpdateUserComponent } from './pages/admin/update-user/update-user.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +49,9 @@ import { ViewCategoryComponent } from './pages/admin/view-category/view-category
     SidebarComponent,
     WelcomeComponent,
     ViewCategoryComponent,
+    AddCategoryComponent,
+    UsertableComponent,
+    UpdateUserComponent,
 
   ],
   imports: [
@@ -60,7 +69,9 @@ import { ViewCategoryComponent } from './pages/admin/view-category/view-category
     MatIconModule,
     MatListModule,
     MatCardModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTableModule,
+
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

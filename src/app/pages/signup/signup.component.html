@@ -10,23 +10,23 @@
                 <!-- {{user | json}} -->
                 <mat-form-field appearance="outline" class="full-width field-margin-right" >
                     <mat-label>First Name</mat-label>
-                    <input [(ngModel)]="user.firstName" name="firstName" matInput placeholder="Placeholder" required>
+                    <input [(ngModel)]="user.firstName" name="firstName" matInput placeholder="First Name" required>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" class="full-width">
                     <mat-label>Last Name</mat-label>
-                    <input  [(ngModel)]="user.lastName" name="lastName" matInput placeholder="Placeholder" required>
+                    <input  [(ngModel)]="user.lastName" name="lastName" matInput placeholder="Last Name" required>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" class="full-width field-margin-right">
                     <mat-label>Username</mat-label>
-                    <input [(ngModel)]="user.username" (focusout)="userFormSubmit()" name="username" matInput placeholder="Placeholder" required>
+                    <input [(ngModel)]="user.username" (focusout)="userFormSubmit()" name="username" matInput placeholder="Username" required>
                     <mat-hint style="color:red;" >*Username must be unique</mat-hint>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" class="full-width">
                     <mat-label>Email</mat-label>
-                    <input [(ngModel)]="user.email" name="email" type="email" matInput placeholder="Placeholder" required>
+                    <input [(ngModel)]="user.email" name="email" type="email" matInput placeholder="Email" required>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" class="full-width field-margin-right">
@@ -39,12 +39,12 @@
 
                   <mat-form-field appearance="outline" class="full-width">
                     <mat-label>Phone Number</mat-label>
-                    <input [(ngModel)]="user.phone" name="phone" type="number" matInput placeholder="Placeholder" required>
+                    <input [(ngModel)]="user.phone" name="phone" type="number" matInput placeholder="Phone Number" required>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" class="full-width field-margin-right">
                     <mat-label>Password</mat-label>
-                    <input [(ngModel)]="user.password" name="password" type="password" matInput placeholder="Placeholder" required>
+                    <input [(ngModel)]="user.password" name="password" type="password" matInput placeholder="Password" required>
                 </mat-form-field>
                 <div class="container text-center" style="padding:20px">
                     <button mat-raised-button class="field-margin-right" type="submit" style=" background-color:#93d84e; color:#fff; width: 40%;">Singup</button>

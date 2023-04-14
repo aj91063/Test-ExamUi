@@ -9,6 +9,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewCategoryComponent } from './pages/admin/view-category/view-category.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { UsertableComponent } from './pages/admin/usertable/usertable.component';
 
 const routes: Routes = [
   {
@@ -38,6 +41,18 @@ const routes: Routes = [
       {
         path:'profile',
         component:ProfileComponent
+      },
+      {
+        path:'categories',
+        component:ViewCategoryComponent
+      },
+      {
+        path:'addCategory',
+        component:AddCategoryComponent
+      },
+      {
+        path:'userDetails',
+        component:UsertableComponent
       }
     ]
   },

@@ -19,4 +19,9 @@ export class UserServiceService {
   public getUserByUsername(username:any){
     return this.http.get(`${baseUrl}/api/user/${username}`)
   }
+
+
+  public getAllUser(){
+    return this.http.get(`${baseUrl}/api/user/`)
+  }
 }
