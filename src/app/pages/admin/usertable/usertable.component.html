@@ -1,0 +1,41 @@
+<!-- <mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+</mat-form-field> *ngFor="let c of categories"-->
+<mat-card>
+  <mat-card-header >
+    <mat-card-title class="t_header">User Details</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <table class="table">
+      <thead>
+        <tr class="tr-head">
+          <th>UserId</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of usersDetails">
+          <td>{{ c.id + "." }}</td>
+          <td>{{ (c.firstName + " " + c.lastName).toUpperCase() }}</td>
+          <td>{{ c.username }}</td>
+          <td>{{ c.email }}</td>
+          <td>{{ c.phone }}</td>
+          <td *ngIf="c.enabled"><p class="active">Active</p></td>
+          <td *ngIf="!c.enabled"><p class="deactive">Deactive</p></td>
+          <td>
+            <a href="#" >Edit</a>
+             <span>&nbsp; &nbsp; |&nbsp; &nbsp; </span>
+            <a href="#">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>
