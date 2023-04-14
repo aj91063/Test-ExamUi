@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-add-category',
@@ -13,7 +14,7 @@ export class AddCategoryComponent implements OnInit{
     description:""
   }
 
-  constructor(private snack:MatSnackBar){}
+  constructor(private snack:MatSnackBar, private _category:CategoryService){}
   ngOnInit(): void {
 
   }
@@ -35,12 +36,38 @@ export class AddCategoryComponent implements OnInit{
     return;
   }
   else{
+    this._category.getCategoryByTitle(this.category.title).subscribe((data:any)=>{
+
+        console.log(data);
+        if(data == null){
+        this._category.addCategory(this.category).subscribe(
+          (data1)=>{
+             // console.log(data1);
+             this.snack.open("This title \""+this.category.title+"\" added.","ok",{
+              duration:2000,
+              horizontalPosition: 'center'
+            });
+          }
+        )
+      }else{
+        this.snack.open("This title \""+data.title+"\" is already exits","ok",{
+          duration:2000,
+          horizontalPosition: 'center'
+        });
+       // console.log(data.title+" is already exits");
+      }
+
+
+
+    },(error)=>{
+      console.log(error);
+    }
+    );
 
 
 
 
-
-  }
+    }
   }
 
 }

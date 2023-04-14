@@ -1,7 +1,6 @@
 <mat-card style="height:100%;">
   <h1 style="margin: 10px;"> Add New Category</h1>
   <mat-card-content class="text-center" style="margin-top: 5%;">
-    {{category | json}}
     <form (ngSubmit)="addCategoryForm()">
       <mat-form-field style="width: 50%;" appearance="outline">
         <mat-label>Title</mat-label>
