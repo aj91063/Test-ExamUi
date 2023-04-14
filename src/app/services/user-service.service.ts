@@ -24,4 +24,8 @@ export class UserServiceService {
   public getAllUser(){
     return this.http.get(`${baseUrl}/api/user/`)
   }
+public deleteUser(id:any){
+  return this.http.delete(`${baseUrl}/api/user/${id}`)
+}
+
 }

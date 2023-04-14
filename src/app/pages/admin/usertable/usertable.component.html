@@ -30,9 +30,9 @@
           <td *ngIf="c.enabled"><p class="active">Active</p></td>
           <td *ngIf="!c.enabled"><p class="deactive">Deactive</p></td>
           <td>
-            <a href="#" >Edit</a>
-             <span>&nbsp; &nbsp; |&nbsp; &nbsp; </span>
-            <a href="#">Delete</a>
+            <a [routerLink]="'/admin/updateUser'" ><mat-icon class="edit">edit</mat-icon></a>
+             <span>&nbsp;&nbsp;</span>
+            <a [routerLink]="'/admin/userDetails'" (click)="delete(c.id)"><mat-icon class="delete">delete</mat-icon></a>
           </td>
         </tr>
       </tbody>
