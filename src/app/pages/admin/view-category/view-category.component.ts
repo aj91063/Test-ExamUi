@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
-
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-view-category',
   templateUrl: './view-category.component.html',
@@ -17,7 +17,7 @@ export class ViewCategoryComponent implements OnInit{
 }*/
 
 
-  constructor(private _category:CategoryService){}
+  constructor(private _category:CategoryService, private title:Title ){}
 
 ngOnInit():void{
   this._category.categories().subscribe((data:any)=>{
@@ -28,6 +28,8 @@ ngOnInit():void{
     console.log(error);
   }
   );
+
+  this.title.setTitle("View Catregory")
 }
 
 

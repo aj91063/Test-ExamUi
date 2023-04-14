@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatTableDataSource} from '@angular/material/table';
 import { Route, Router } from '@angular/router';
 import { UserServiceService } from 'src/app/services/user-service.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-usertable',
@@ -11,10 +12,11 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 })
 export class UsertableComponent implements  OnInit{
 
-    constructor(private users: UserServiceService, private router:Router, private snak:MatSnackBar){}
+    constructor(private users: UserServiceService, private router:Router, private snak:MatSnackBar, private title:Title){}
      usersDetails:any=[];
     ngOnInit(): void {
         this.fetchData();
+        this.title.setTitle("User Details")
     }
 
     fetchData(){

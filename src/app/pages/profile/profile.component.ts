@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
-
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -9,7 +9,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class ProfileComponent implements OnInit {
 
 
-  constructor(public login:LoginService){
+  constructor(public login:LoginService, private title:Title){
 
   }
 
@@ -19,7 +19,7 @@ public userData:any="";
                 this.userData=data;
                 console.log(this.userData);
           });
-
+          this.title.setTitle("Profile")
   }
 
 }

@@ -2,6 +2,7 @@ import { LoginService } from 'src/app/services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserServiceService } from 'src/app/services/user-service.service';
+import { Title } from '@angular/platform-browser';
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
 @Component({
@@ -10,9 +11,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  constructor(private userService: UserServiceService, private snackBar: MatSnackBar,public login:LoginService, private router:Router) { }
+  constructor(private userService: UserServiceService, private snackBar: MatSnackBar,public login:LoginService, private router:Router,private title:Title) { }
   ngOnInit(): void {
-
+    this.title.setTitle("Singup")
   }
 
   public user = {

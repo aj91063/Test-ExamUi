@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginService } from 'src/app/services/login.service';
 import { HttpClient, HttpResponse ,HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -16,8 +17,8 @@ loginData={
   userName:'',
   password:'',
 }
-  constructor(private snack:MatSnackBar, private login:LoginService, private router:Router){}
-  ngOnInit():void{}
+  constructor(private snack:MatSnackBar, private login:LoginService, private router:Router, private title:Title){}
+  ngOnInit():void{this.title.setTitle("Login")}
 
   loginFormSubmit(){
     //alert("hello")

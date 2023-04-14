@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoryService } from 'src/app/services/category.service';
+import Swal from 'sweetalert2';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-add-category',
@@ -14,9 +16,9 @@ export class AddCategoryComponent implements OnInit{
     description:""
   }
 
-  constructor(private snack:MatSnackBar, private _category:CategoryService){}
+  constructor(private snack:MatSnackBar, private _category:CategoryService, private title:Title){}
   ngOnInit(): void {
-
+    this.title.setTitle("Add Category")
   }
 
 
@@ -42,11 +44,7 @@ export class AddCategoryComponent implements OnInit{
         if(data == null){
         this._category.addCategory(this.category).subscribe(
           (data1)=>{
-             // console.log(data1);
-             this.snack.open("This title \""+this.category.title+"\" added.","ok",{
-              duration:2000,
-              horizontalPosition: 'center'
-            });
+            Swal.fire('Success!!',`This category \"${this.category.title}\" created successfully.`,'success')
           }
         )
       }else{
