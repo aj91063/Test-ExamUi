@@ -28,4 +28,8 @@ public deleteUser(id:any){
   return this.http.delete(`${baseUrl}/api/user/${id}`)
 }
 
+public updateStatus(username:any, enabled:any){
+  return  this.http.put(`${baseUrl}/api/user/enabled/${username}`,enabled);
+}
+
 }

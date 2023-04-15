@@ -13,6 +13,7 @@ import { ViewCategoryComponent } from './pages/admin/view-category/view-category
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { UsertableComponent } from './pages/admin/usertable/usertable.component';
 import { UpdateUserComponent } from './pages/admin/update-user/update-user.component';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,10 @@ const routes: Routes = [
       {
         path:'updateUser',
         component:UpdateUserComponent
+      },
+      {
+        path:'quizzes',
+        component:ViewQuizzesComponent
       }
     ]
   },

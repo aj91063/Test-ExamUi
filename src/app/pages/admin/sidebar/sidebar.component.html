@@ -7,7 +7,7 @@
     <button mat-list-item  [routerLink]="'/admin/profile'"><mat-icon matListItemIcon style="color: black;">account_circle</mat-icon >Profile</button>
     <button mat-list-item  [routerLink]= "'/admin/categories'"><mat-icon matListItemIcon style="color: black;">list</mat-icon>Categories</button>
     <button mat-list-item   [routerLink]="'/admin/addCategory'"><mat-icon matListItemIcon style="color: black;">add_circle_outline</mat-icon >Add Categoery</button>
-    <button mat-list-item><mat-icon matListItemIcon style="color: black;">quiz</mat-icon >Quizzes</button>
+    <button mat-list-item [routerLink]="'/admin/quizzes'"><mat-icon matListItemIcon style="color: black;">quiz</mat-icon >Quizzes</button>
     <button mat-list-item><mat-icon matListItemIcon style="color: black;">add</mat-icon >Add Quiz</button>
     <button mat-list-item  [routerLink]="'/admin/userDetails'"><mat-icon matListItemIcon style="color: black;">person</mat-icon >User Details</button>
     <button mat-list-item (click)="logout()"><mat-icon matListItemIcon style="color: black;">logout</mat-icon>Logout</button>

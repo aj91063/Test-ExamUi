@@ -34,6 +34,8 @@ import {MatTableModule} from '@angular/material/table';
 import { UsertableComponent } from './pages/admin/usertable/usertable.component';
 import {MatTableDataSource} from '@angular/material/table';
 import { UpdateUserComponent } from './pages/admin/update-user/update-user.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { UpdateUserComponent } from './pages/admin/update-user/update-user.compo
     AddCategoryComponent,
     UsertableComponent,
     UpdateUserComponent,
+    ViewQuizzesComponent,
 
   ],
   imports: [
@@ -71,7 +74,7 @@ import { UpdateUserComponent } from './pages/admin/update-user/update-user.compo
     MatCardModule,
     MatSidenavModule,
     MatTableModule,
-
+    MatSlideToggleModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

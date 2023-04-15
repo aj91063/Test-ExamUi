@@ -11,6 +11,11 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./usertable.component.css']
 })
 export class UsertableComponent implements  OnInit{
+  public status ={
+    enabled:Boolean
+  }
+  checked = true;
+  disabled = false;
 
     constructor(private users: UserServiceService, private router:Router, private snak:MatSnackBar, private title:Title){}
      usersDetails:any=[];
@@ -38,5 +43,20 @@ export class UsertableComponent implements  OnInit{
 
       }
     }
+
+
+      updateStatus(username:any,status:any){
+        this.status.enabled=status;
+          this.users.updateStatus(username,this.status).subscribe(
+            (data)=>{
+              //console.log(data)
+            },
+            (error)=>{
+              console.error(error);
+            }
+          );
+
+      }
+
 }
 
