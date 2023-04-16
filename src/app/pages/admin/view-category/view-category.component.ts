@@ -22,7 +22,7 @@ export class ViewCategoryComponent implements OnInit{
 ngOnInit():void{
   this._category.categories().subscribe((data:any)=>{
     this.categories=data;
-    console.log(data);
+    //console.log(data);
 
   },(error)=>{
     console.log(error);

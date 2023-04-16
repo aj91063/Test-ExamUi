@@ -15,7 +15,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     this.title.setTitle("Singup")
   }
-
+  hide = true;
   public user = {
     firstName: '',
     lastName: '',

@@ -12,7 +12,7 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+  hide = true;
 loginData={
   userName:'',
   password:'',

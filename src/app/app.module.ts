@@ -36,6 +36,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import { UpdateUserComponent } from './pages/admin/update-user/update-user.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.co
     UsertableComponent,
     UpdateUserComponent,
     ViewQuizzesComponent,
+    AddQuizComponent,
 
   ],
   imports: [
@@ -74,7 +77,8 @@ import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.co
     MatCardModule,
     MatSidenavModule,
     MatTableModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatTooltipModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

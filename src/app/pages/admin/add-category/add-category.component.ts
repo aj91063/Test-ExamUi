@@ -11,7 +11,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class AddCategoryComponent implements OnInit{
 
-  category={
+  public category={
     title:"",
     description:""
   }
@@ -43,8 +43,12 @@ export class AddCategoryComponent implements OnInit{
         console.log(data);
         if(data == null){
         this._category.addCategory(this.category).subscribe(
-          (data1)=>{
+          ()=>{
             Swal.fire('Success!!',`This category \"${this.category.title}\" created successfully.`,'success')
+            this.category={
+              title:"",
+              description:""
+            }
           }
         )
       }else{

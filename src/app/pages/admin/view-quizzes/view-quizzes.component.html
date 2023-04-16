@@ -1,8 +1,13 @@
 
-<mat-card style="margin-top: 10px;" *ngFor="let c of quizees">
+<mat-card style="margin-top: 10px;" *ngFor="let c of quizees" class="card">
     <mat-card-header>
       <div mat-card-avatar class="header-image"></div>
         <mat-card-title>{{"Quize Name: "+c.title}}</mat-card-title>
+        <a
+        [routerLink]="'/admin/quizzes'"
+        (click)="delete(c.qId)"
+        ><mat-icon class="deleteIcon"  matTooltip="Delete Quiz"
+        matTooltipClass="tooltip">close</mat-icon></a>
         <mat-card-subtitle>{{"Category: "+c.category.title}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
@@ -14,9 +19,10 @@
       <button mat-raised-button color="accent" style="margin-left: 20px;">Attempts</button>
       <button mat-stroked-button color="primary" style="margin-left: 20px;">Marks: {{c.maxMarks}}</button>
       <button mat-stroked-button color="primary" style="margin-left: 20px;">Total Questions: {{c.numberOfQuestions}}</button>
+
     </mat-card-actions>
   </mat-card>
   <div class="container text-center">
 
-    <button mat-raised-button color="primary" style="margin-top: 20px;">Add New Quiz</button>
+    <button mat-raised-button color="primary" style="margin-top: 20px;" [routerLink]="'/admin/addQuiz'">Add New Quiz</button>
   </div>

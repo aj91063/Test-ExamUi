@@ -4,6 +4,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { Route, Router } from '@angular/router';
 import { UserServiceService } from 'src/app/services/user-service.service';
 import { Title } from '@angular/platform-browser';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-usertable',
@@ -31,17 +32,26 @@ export class UsertableComponent implements  OnInit{
     }
 
     delete(id:any){
-      if(confirm("Are you sure to delete "+name)) {
-        this.users.deleteUser(id).subscribe(
-          ()=> {
-            this.fetchData();
-            this.snak.open(`UserId: ${id} deleted successfully.` ,'ok',{
-              duration:3000
-            })
+      Swal.fire(
+        {
+          icon:'info',
+          title:'Are you sure?',
+          confirmButtonText:'Delete',
+          showCancelButton:true
         }
-        );
+        ).then((result)=>{
+          if(result.isConfirmed) {
+            this.users.deleteUser(id).subscribe(
+              ()=> {
+                this.fetchData();
+                this.snak.open(`UserId: ${id} deleted successfully.` ,'ok',{
+                  duration:3000
+                })
+            }
+            );
 
-      }
+          }
+        });
     }
 
 

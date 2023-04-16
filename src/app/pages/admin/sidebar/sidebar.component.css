@@ -17,3 +17,12 @@
   .sticky button {font-size: 18px;}
 }
 
+.card{
+  background: linear-gradient(135deg, #71b7e6, #bc7ed4);
+  box-shadow: 2px 2px 2px 2px #000;
+  /* margin: 50px; */
+}
+
+span{
+  color: white;
+}

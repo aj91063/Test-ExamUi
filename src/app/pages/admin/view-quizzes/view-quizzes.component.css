@@ -2,3 +2,28 @@
   background-image: url("../../../../assets/quiz.png");
   background-size: cover;
 }
+
+
+.deleteIcon{
+  color: rgb(231, 42, 42);
+  position: absolute;
+  top:20px;
+  right: 1rem;
+
+}
+.deleteIcon:hover{
+  color: #e95252;
+  background-color: #c0aceefe;
+  border-radius: 4px;
+}
+.tooltip{
+  position: absolute;
+  top:20px;
+  right: 0;
+}
+.card{
+  background: linear-gradient(135deg, #71b7e6, #71b7e6);
+  box-shadow: 1px 1px 1px .5px #000;
+  /* margin: 50px; */
+}
+
