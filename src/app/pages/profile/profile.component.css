@@ -1,9 +1,9 @@
-.img-profile{
+/* .img-profile{
  max-width: 150px;
  max-height: 150px;
  box-shadow: 1px 1px 3px 1px rgb(116, 115, 115);
  border-radius: 50%;
-}
+} */
 .table{
   width: 100%;
   border-collapse: collapse;
@@ -39,4 +39,69 @@ table tr:nth-child(even){
   border-radius: 1.5rem;
   padding: .5rem 1rem;
   color: #b30021;
+}
+
+/* .wrapper{
+    height: 300px;
+    width:300px;
+    position: relative;
+    border: 5px solid #fff;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.my_file{
+  position: absolute;
+   bottom: 0;
+   outline: none;
+   color: transparent;
+   width: 100%;
+   box-sizing: border-box;
+   padding: 15px 120px;
+   cursor: pointer;
+   transition: 0.5s;
+   background: rgba(0,0,0,0.5);
+}
+.my_file::file-selector-button{
+  visibility:hidden;
+}
+
+.my_file::before{
+  content: 'edit';
+  font-size: 50px;
+  color: #fff;
+  display: inline-block;
+
+} */
+
+.upload{
+  width: 250px;
+  margin: 0 auto;
+  position: relative;
+
+}
+.upload img{
+  border-radius: 50%;
+  border: 3px solid #eaeaea;
+}
+
+.upload .round{
+  position: absolute;
+  bottom: 0px;
+  left: 150px;
+  background: #00b4FF;
+  width: 35px;
+  height: 35px;
+  line-height: 36px;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer !important;
+}
+.upload .round input[type='file']{
+  position: absolute;
+  transform: scale(2);
+  opacity: 0;
+
 }

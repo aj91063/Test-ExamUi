@@ -4,8 +4,17 @@
     <div class="bootstrap-wrapper">
       <div class="container">
         <div class="container text-center">
-          <img src="../../../assets/logo.png" class="img-profile" alt="" />
-          <h1 style="margin-top: 10px">{{userData.firstName+" "+userData.lastName}}</h1>
+          <div class="upload">
+            <img src="../../../assets/profile.png" class="img-profile" alt="profile image" width="100"/>
+            <div class="round">
+              <input type="file" accept="image/png, image/jpeg"/>
+              <mat-icon style="text-align: center; margin: 7px auto; color: #fff; ">photo_camera</mat-icon>
+
+            </div>
+          </div>
+          <h1 style="margin-top: 10px">
+            {{ userData.firstName + " " + userData.lastName }}
+          </h1>
         </div>
         <div class="row">
           <!-- {{user | json}} -->
@@ -13,34 +22,40 @@
             <table class="table">
               <tr>
                 <td>Username</td>
-                <td>{{userData.username}}</td>
+                <td>{{ userData.username }}</td>
               </tr>
               <tr>
                 <td>Role</td>
-                <td>{{userData.authorities[0].authority}}</td>
+                <td>{{ userData.authorities[0].authority }}</td>
                 <!-- <td>dd</td> -->
               </tr>
               <tr>
                 <td>Gender</td>
-                <td>{{userData.gender}}</td>
+                <td>{{ userData.gender }}</td>
               </tr>
               <tr>
                 <td>User ID</td>
-                <td *ngIf="userData.authorities[0].authority=='ADMIN'">{{userData.authorities[0].authority+"-0"+userData.id}}</td>
-                <td *ngIf="userData.authorities[0].authority=='NORMAL'">{{"Exam-0"+userData.id}}</td>
+                <td *ngIf="userData.authorities[0].authority == 'ADMIN'">
+                  {{ userData.authorities[0].authority + "-0" + userData.id }}
+                </td>
+                <td *ngIf="userData.authorities[0].authority == 'NORMAL'">
+                  {{ "Exam-0" + userData.id }}
+                </td>
               </tr>
               <tr>
                 <td>Phone Number</td>
-                <td>{{userData.phone}}</td>
+                <td>{{ userData.phone }}</td>
               </tr>
               <tr>
                 <td>Email</td>
-                <td>{{userData.email}}</td>
+                <td>{{ userData.email }}</td>
               </tr>
               <tr>
                 <td>Status</td>
                 <td *ngIf="userData.enabled"><p class="active">Active</p></td>
-                <td *ngIf="!userData.enabled"><p class="deactive">Deactive</p></td>
+                <td *ngIf="!userData.enabled">
+                  <p class="deactive">Deactive</p>
+                </td>
               </tr>
             </table>
           </div>
@@ -49,7 +64,13 @@
     </div>
   </mat-card-content>
   <mat-card-actions class="center">
-    <button mat-raised-button [routerLink]="'/admin/updateUser'" color="primary">Update</button>
+    <button
+      mat-raised-button
+      [routerLink]="'/admin/updateUser'"
+      color="primary"
+    >
+      Update
+    </button>
     <!-- <button mat-raised-button style="background-color: #FF7E06; color: white; margin-left: 10px;">SHARE</button> -->
   </mat-card-actions>
 </mat-card>

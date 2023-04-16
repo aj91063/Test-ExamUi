@@ -24,4 +24,13 @@ public deleteQuiz(qid:any){
  return this.http.delete(`${baseUrl}/quiz/deleteQuiz/${qid}`);
 }
 
+
+public getQuiz(qID:any){
+  return this.http.get(`${baseUrl}/quiz/getQuiz/${qID}`);
+}
+
+public updateQuiz(quiz:any){
+return this.http.put(`${baseUrl}/quiz/updateQuiz`,quiz);
+}
+
 }

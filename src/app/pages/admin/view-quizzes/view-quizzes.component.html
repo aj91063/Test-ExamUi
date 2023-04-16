@@ -3,6 +3,8 @@
     <mat-card-header>
       <div mat-card-avatar class="header-image"></div>
         <mat-card-title>{{"Quize Name: "+c.title}}</mat-card-title>
+          <p *ngIf="c.active" class="active">Active</p>
+          <p *ngIf="!c.active" class="deactive">Deactive</p>
         <a
         [routerLink]="'/admin/quizzes'"
         (click)="delete(c.qId)"
@@ -14,11 +16,11 @@
      <p style="padding: 0 10px;">{{"Quize Description: "+c.description}}</p>
     </mat-card-content>
     <mat-card-actions  style="margin: 0 auto;">
-      <button mat-raised-button color="primary">Questions</button>
-      <button mat-raised-button color="accent" style="margin-left: 20px;">Update</button>
-      <button mat-raised-button color="accent" style="margin-left: 20px;">Attempts</button>
-      <button mat-stroked-button color="primary" style="margin-left: 20px;">Marks: {{c.maxMarks}}</button>
-      <button mat-stroked-button color="primary" style="margin-left: 20px;">Total Questions: {{c.numberOfQuestions}}</button>
+      <button mat-stroked-button color="primary">Questions</button>
+      <button [routerLink]="'/admin/quiz/'+c.qId"  mat-stroked-button color="accent" style="margin-left: 20px;">Update</button>
+      <button mat-stroked-button color="accent" style="margin-left: 20px;">Attempts</button>
+      <button mat-button color="primary" style="margin-left: 20px;">Marks: {{c.maxMarks}}</button>
+      <button mat-button color="primary" style="margin-left: 20px;">Total Questions: {{c.numberOfQuestions}}</button>
 
     </mat-card-actions>
   </mat-card>

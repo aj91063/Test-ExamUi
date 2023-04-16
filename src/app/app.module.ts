@@ -38,6 +38,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     UpdateUserComponent,
     ViewQuizzesComponent,
     AddQuizComponent,
+    UpdateQuizComponent,
 
   ],
   imports: [

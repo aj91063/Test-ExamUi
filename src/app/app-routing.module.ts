@@ -15,6 +15,7 @@ import { UsertableComponent } from './pages/admin/usertable/usertable.component'
 import { UpdateUserComponent } from './pages/admin/update-user/update-user.component';
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 
 const routes: Routes = [
   {
@@ -68,6 +69,10 @@ const routes: Routes = [
       {
         path:'addQuiz',
         component:AddQuizComponent
+      },
+      {
+        path:'quiz/:qid',
+        component:UpdateQuizComponent
       }
     ]
   },
