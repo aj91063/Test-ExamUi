@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-add-questions',
@@ -11,6 +12,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add-questions.component.css']
 })
 export class AddQuestionsComponent implements OnInit {
+  public Editor = ClassicEditor;
   qid:any;
     title:any;
   question={
@@ -21,7 +23,7 @@ export class AddQuestionsComponent implements OnInit {
     option2:'',
     option3: '',
     option4: '',
-    solution:'No sulution available',
+    solution:'No solution available',
     quize: {qId:''}
   }
   constructor(private _route:ActivatedRoute, private titleBar:Title,
