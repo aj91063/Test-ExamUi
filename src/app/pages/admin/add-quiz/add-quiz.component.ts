@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoryService } from 'src/app/services/category.service';
 import { QuizeService } from 'src/app/services/quize.service';
 import Swal from 'sweetalert2';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-add-quiz',
@@ -21,7 +22,10 @@ export class AddQuizComponent implements OnInit {
       }
 
 
-      constructor(private _category:CategoryService, private quiz:QuizeService, private snack:MatSnackBar){}
+      constructor(private _category:CategoryService, private quiz:QuizeService,
+         private snack:MatSnackBar,
+         private titleBar:Title
+         ){}
       ngOnInit(): void {
             this._category.categories().subscribe(
               (data:any)=>{
@@ -30,6 +34,8 @@ export class AddQuizComponent implements OnInit {
                 Swal.fire('Error','Error in loading from server.','error')
               }
             )
+
+            this.titleBar.setTitle('Add Quiz')
       }
 
 

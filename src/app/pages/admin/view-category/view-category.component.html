@@ -1,18 +1,35 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <h1 style="text-align: center;">All Categories</h1>
+    <div *ngIf="categories.length==0"> Category is not avaliable.</div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
 
-<mat-card class="card">
+          <mat-card *ngFor="let c of categories" class="mb10 card">
 
-      <mat-list>
-        <div mat-subheader><h1> All Categories</h1></div>
-            <mat-list-item *ngFor="let c of categories">
-              <mat-icon matListItemIcon style="color: black;">
-                list_alt
-                </mat-icon>
-              <div matListItemTitle>{{c.title}}</div>
-              <div matListItemLine>{{c.description}}</div>
-              <hr>
-            </mat-list-item>
-      </mat-list>
-      <div class="container" style="margin: 20px; text-align: center;">
-        <button mat-raised-button color="primary" [routerLink]="'/admin/addCategory'">Add New Category</button>
-      </div>
-</mat-card>
+            <mat-card-header>
+              <a [routerLink]="'/admin/categories'" (click)="delete(c.cid)"
+      ><mat-icon
+        class="deleteIcon"
+        matTooltip="Delete Category"
+        matTooltipClass="tooltip"
+        >close</mat-icon
+      ></a
+    >
+            <mat-card-title><mat-icon style="color: black;">
+              list_alt
+            </mat-icon> {{c.title }}</mat-card-title>
+
+            <mat-card-subtitle><b> Description: </b>{{c.description }}</mat-card-subtitle>
+          </mat-card-header>
+
+          </mat-card>
+          <div class="container" style="margin: 20px; text-align: center;">
+            <button mat-raised-button color="primary" [routerLink]="'/admin/addCategory'">Add New Category</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+

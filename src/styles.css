@@ -15,3 +15,35 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
 .text-center{
     text-align: center;
 }
+
+.mt10{
+  margin-top: 10px;
+}
+ .mb10{
+  margin-bottom: 10px;
+}
+.ml10{
+  margin-left: 10px;
+}
+ .mr10{
+  margin-right: 10px;
+}
+
+.mt20{
+  margin-top: 20px;
+}
+ .mb20{
+  margin-bottom: 20px;
+}
+.ml20{
+  margin-left: 20px;
+}
+ .mr20{
+  margin-right: 20px;
+}
+
+.card{
+  background: linear-gradient(135deg, #71b7e6, #bc7ed4);
+  box-shadow: 2px 2px 2px 2px #000;
+  /* margin: 50px; */
+}

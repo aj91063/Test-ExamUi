@@ -21,4 +21,7 @@ export class CategoryService {
 
   }
 
+  public deleteCategory(id:any){
+    return this.http.delete(`${baseUrl}/category/deleteCategory/${id}`);
+  }
 }

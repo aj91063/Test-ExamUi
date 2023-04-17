@@ -1,0 +1,11 @@
+.full-width{
+  width: 100%;
+}
+.mouse:hover{
+  background-color: rgba(114, 112, 112, 0.4);
+}
+.card{
+  background: linear-gradient(135deg, #71b7e6, #bc7ed4);
+  box-shadow: 2px 2px 2px 2px #000;
+  /* margin: 50px; */
+}

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 import { QuizeService } from 'src/app/services/quize.service';
 import Swal from 'sweetalert2';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-update-quiz',
@@ -12,7 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class UpdateQuizComponent implements OnInit{
     constructor(private _route:ActivatedRoute, private _quiz:QuizeService,
-       private _category:CategoryService, private snack:MatSnackBar, private router:Router){}
+       private _category:CategoryService, private snack:MatSnackBar, private router:Router, private title:Title){}
     qId=0;
     quizData:any;
     categories:any;
@@ -37,6 +38,8 @@ export class UpdateQuizComponent implements OnInit{
           }
 
         )
+          this.title.setTitle("Update Quiz")
+
     }
 
 

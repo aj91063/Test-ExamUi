@@ -1,0 +1,55 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <h1>Questions of {{ title }} Quiz</h1>
+    <div *ngIf="question.length == 0">
+      Question is not avaliable to the quiz: <b> {{ title }}</b>
+    </div>
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 offset-md-4 mb10">
+              <button mat-raised-button color="primary" class="text-center" [routerLink]="'/admin/addQuestion/'+qid+'/'+title">
+                <mat-icon class="mat-18">add</mat-icon> Add Question
+              </button>
+            </div>
+          </div>
+        </div>
+        <mat-card *ngFor="let q of question; let i = index" class="mb10 card">
+          <mat-card-content>
+            <p>
+              <b>Q{{ i + 1 + ") " }}</b>
+              <span [innerHTML]="q.content"></span>
+            </p>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-6">
+                  <p *ngIf="q.option1 !=null"><b>a)</b> {{ q.option1 }}</p>
+                </div>
+                <div class="col-md-6">
+                  <p *ngIf="q.option2 !=null"><b>b)</b> {{ q.option2 }}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <p *ngIf="q.option3 !=null"><b>c)</b> {{ q.option3 }}</p>
+                </div>
+                <div class="col-md-6">
+                  <p *ngIf="q.option4 !=null"><b>d)</b> {{ q.option4 }}</p>
+                </div>
+              </div>
+              <hr />
+              <button mat-button color="primary" (click)="toggleData()">
+                Answer
+              </button>
+              <p class="mt10" id="myDIV" *ngIf="toDisplay">
+                <b>Answer: </b> {{ q.answer }}
+              </p>
+            </div>
+          </mat-card-content>
+          <mat-divider></mat-divider>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

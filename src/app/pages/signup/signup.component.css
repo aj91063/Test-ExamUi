@@ -4,10 +4,10 @@
     box-shadow: 2px 2px 3px 1px rgb(112, 109, 109);
 }
 .full-width{
-    width: 45%;
+    width: 100%;
 }
 
-.field-margin-right{
+.field-margin-right1{
     margin-right: 10%;
 }
 
@@ -15,5 +15,5 @@
     box-shadow: 1px 1px 3px 1px rgb(116, 115, 115);
     border-radius: 100%;
     margin-top: 20px;
-    
+
 }

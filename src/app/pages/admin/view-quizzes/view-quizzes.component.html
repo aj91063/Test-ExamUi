@@ -1,30 +1,56 @@
-
-<mat-card style="margin-top: 10px;" *ngFor="let c of quizees" class="card">
-    <mat-card-header>
-      <div mat-card-avatar class="header-image"></div>
-        <mat-card-title>{{"Quize Name: "+c.title}}</mat-card-title>
-          <p *ngIf="c.active" class="active">Active</p>
-          <p *ngIf="!c.active" class="deactive">Deactive</p>
-        <a
-        [routerLink]="'/admin/quizzes'"
-        (click)="delete(c.qId)"
-        ><mat-icon class="deleteIcon"  matTooltip="Delete Quiz"
-        matTooltipClass="tooltip">close</mat-icon></a>
-        <mat-card-subtitle>{{"Category: "+c.category.title}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-     <p style="padding: 0 10px;">{{"Quize Description: "+c.description}}</p>
-    </mat-card-content>
-    <mat-card-actions  style="margin: 0 auto;">
-      <button mat-stroked-button color="primary">Questions</button>
-      <button [routerLink]="'/admin/quiz/'+c.qId"  mat-stroked-button color="accent" style="margin-left: 20px;">Update</button>
-      <button mat-stroked-button color="accent" style="margin-left: 20px;">Attempts</button>
-      <button mat-button color="primary" style="margin-left: 20px;">Marks: {{c.maxMarks}}</button>
-      <button mat-button color="primary" style="margin-left: 20px;">Total Questions: {{c.numberOfQuestions}}</button>
-
-    </mat-card-actions>
-  </mat-card>
-  <div class="container text-center">
-
-    <button mat-raised-button color="primary" style="margin-top: 20px;" [routerLink]="'/admin/addQuiz'">Add New Quiz</button>
-  </div>
+<mat-card style="margin-top: 10px" *ngFor="let c of quizees" class="card">
+  <mat-card-header>
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-title>{{ "Quize Name: " + c.title }}</mat-card-title>
+    <p *ngIf="c.active" class="active">Active</p>
+    <p *ngIf="!c.active" class="deactive">Deactive</p>
+    <a [routerLink]="'/admin/quizzes'" (click)="delete(c.qId)"
+      ><mat-icon
+        class="deleteIcon"
+        matTooltip="Delete Quiz"
+        matTooltipClass="tooltip"
+        >close</mat-icon
+      ></a
+    >
+    <mat-card-subtitle>{{ "Category: " + c.category.title }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p style="padding: 0 10px">{{ "Quize Description: " + c.description }}</p>
+  </mat-card-content>
+  <mat-card-actions style="margin: 0 auto">
+    <button
+      mat-stroked-button
+      color="primary"
+      [routerLink]="'/admin/viewQuestion/' + c.qId + '/' + c.title"
+    >
+      Questions
+    </button>
+    <button
+      [routerLink]="'/admin/quiz/' + c.qId"
+      mat-stroked-button
+      color="accent"
+      style="margin-left: 20px"
+    >
+      Update
+    </button>
+    <button mat-stroked-button color="accent" style="margin-left: 20px">
+      Attempts
+    </button>
+    <button mat-button color="primary" style="margin-left: 20px">
+      Marks: {{ c.maxMarks }}
+    </button>
+    <button mat-button color="primary" style="margin-left: 20px">
+      Total Questions: {{ c.numberOfQuestions }}
+    </button>
+  </mat-card-actions>
+</mat-card>
+<div class="container text-center">
+  <button
+    mat-raised-button
+    color="primary"
+    style="margin-top: 20px"
+    [routerLink]="'/admin/addQuiz'"
+  >
+    Add New Quiz
+  </button>
+</div>
