@@ -21,6 +21,7 @@ export class AddQuestionsComponent implements OnInit {
     option2:'',
     option3: '',
     option4: '',
+    solution:'No sulution available',
     quize: {qId:''}
   }
   constructor(private _route:ActivatedRoute, private titleBar:Title,
@@ -40,7 +41,7 @@ export class AddQuestionsComponent implements OnInit {
 
 
   addQuestion(){
-        if(this.question.content.trim() =='' || this.question.content ==null){
+        if(this.question.content ==null){
           this.snack.open("Question content is required","ok",{
             duration:2000,
             horizontalPosition: 'center'
@@ -74,7 +75,7 @@ export class AddQuestionsComponent implements OnInit {
       //   });
       //   return;
       // }
-      else if(this.question.answer =='' || this.question.answer ==null){
+      else if(this.question.answer ==null){
         this.snack.open("Answer is required","ok",{
           duration:2000,
           horizontalPosition: 'center'

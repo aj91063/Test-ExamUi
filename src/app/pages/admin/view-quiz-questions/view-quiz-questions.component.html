@@ -23,19 +23,19 @@
             </p>
             <div class="container-fluid">
               <div class="row">
-                <div class="col-md-6">
-                  <p *ngIf="q.option1 !=null"><b>a)</b> {{ q.option1 }}</p>
+                <div class="col-md-6" *ngIf="q.option1">
+                  <p ><b>(a)</b> {{ q.option1 }}</p>
                 </div>
-                <div class="col-md-6">
-                  <p *ngIf="q.option2 !=null"><b>b)</b> {{ q.option2 }}</p>
+                <div class="col-md-6" *ngIf="q.option2">
+                  <p ><b>b)</b> {{ q.option2 }}</p>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
-                  <p *ngIf="q.option3 !=null"><b>c)</b> {{ q.option3 }}</p>
+                <div class="col-md-6" *ngIf="q.option3 ">
+                  <p ><b>c)</b> {{ q.option3 }}</p>
                 </div>
-                <div class="col-md-6">
-                  <p *ngIf="q.option4 !=null"><b>d)</b> {{ q.option4 }}</p>
+                <div class="col-md-6" *ngIf="q.option4 ">
+                  <p ><b>d)</b> {{ q.option4 }}</p>
                 </div>
               </div>
               <hr />
@@ -45,9 +45,14 @@
               <p class="mt10" id="myDIV" *ngIf="toDisplay">
                 <b>Answer: </b> {{ q.answer }}
               </p>
+              <hr>
+            </div>
+
+            <div class="action">
+              <button mat-button color="primary">Update</button>
+              <button mat-button (click)="deleteQuestion(q.quesId)" color="warn">Delete</button>
             </div>
           </mat-card-content>
-          <mat-divider></mat-divider>
         </mat-card>
       </div>
     </div>

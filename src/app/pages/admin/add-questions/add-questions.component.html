@@ -1,4 +1,4 @@
-{{ question | json }}
+<!-- {{ question | json }} -->
 <div class="bootstrap-wrapper">
   <div class="container">
     <div class="row">
@@ -21,6 +21,20 @@
                   matInput
                   placeholder="Question content"
                   required
+
+                ></textarea>
+                <!-- select category/ -->
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Solution</mat-label>
+                <textarea
+                  rows="4"
+                  [(ngModel)]="question.solution"
+                  name="solution"
+                  matInput
+                  placeholder="Solution"
+                  [rows]="2"
                 ></textarea>
                 <!-- select category/ -->
               </mat-form-field>

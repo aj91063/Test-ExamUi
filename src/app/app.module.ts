@@ -41,6 +41,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
 import { AddQuestionsComponent } from './pages/admin/add-questions/add-questions.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 
 @NgModule({
   declarations: [
@@ -84,7 +86,8 @@ import { AddQuestionsComponent } from './pages/admin/add-questions/add-questions
     MatSidenavModule,
     MatTableModule,
     MatSlideToggleModule,
-    MatTooltipModule
+    MatTooltipModule,
+    CKEditorModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
