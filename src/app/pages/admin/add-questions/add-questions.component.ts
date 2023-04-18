@@ -43,7 +43,7 @@ export class AddQuestionsComponent implements OnInit {
 
 
   addQuestion(){
-        if(this.question.content ==null){
+        if(this.question.content ==null || this.question.content.trim()==''){
           this.snack.open("Question content is required","ok",{
             duration:2000,
             horizontalPosition: 'center'
@@ -57,7 +57,7 @@ export class AddQuestionsComponent implements OnInit {
         });
         return;
       }
-      else if(this.question.option2==null || this.question.option2==''){
+      else if(this.question.option2==null || this.question.option2.trim()==''){
         this.snack.open("Option 2 is required","ok",{
           duration:2000,
           horizontalPosition: 'center'
@@ -77,7 +77,7 @@ export class AddQuestionsComponent implements OnInit {
       //   });
       //   return;
       // }
-      else if(this.question.answer ==null){
+      else if(this.question.answer ==null || this.question.answer.trim()==''){
         this.snack.open("Answer is required","ok",{
           duration:2000,
           horizontalPosition: 'center'
