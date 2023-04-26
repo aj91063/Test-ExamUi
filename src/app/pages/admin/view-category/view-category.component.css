@@ -1,10 +1,10 @@
-.card{
+/* .card{
   background: rgba(255, 255, 255, 0.4);
   display: block;
 }
 .mb10{
   margin-bottom:4px;
-}
+} */
 
 .deleteIcon{
   color: rgb(231, 42, 42);
@@ -14,6 +14,65 @@
 
 }
 .deleteIcon:hover{
+  color: #e95252;
+  background-color: #c0aceefe;
+  border-radius: 4px;
+}
+
+
+table, th, td{
+  border-collapse: collapse;
+  padding: 1rem;
+
+}
+table{
+  overflow: auto;
+  width: 100%;
+  border: 1px solid #c0aceefe;
+}
+
+table thead{
+  position: sticky;
+  top: 58px;
+  left: 0;
+  background-color: #c0aceefe;
+}
+
+tbody tr:nth-child(even){
+  background-color: #719ed81f;
+}
+tbody tr:hover{
+  background-color: rgba(114, 112, 112, 0.4);
+  cursor: pointer;
+}
+
+.active{
+  background-color: #86e49d;
+  border-radius: 1.5rem;
+  padding: .5rem 1rem;
+  color: #006b21;
+}
+
+.deactive{
+  background-color: #d863a3;
+  border-radius: 1.5rem;
+  padding: .5rem 1rem;
+  color: #b30021;
+}
+.edit{
+  color: rgb(47, 231, 47);
+}
+
+.edit:hover{
+  color: #006b21;
+  background-color: #c0aceefe;
+  border-radius: 4px;
+}
+
+.delete{
+  color: rgb(231, 42, 42);
+}
+.delete:hover{
   color: #e95252;
   background-color: #c0aceefe;
   border-radius: 4px;

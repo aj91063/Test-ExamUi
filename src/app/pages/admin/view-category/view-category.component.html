@@ -1,4 +1,4 @@
-<div class="bootstrap-wrapper">
+<!-- <div class="bootstrap-wrapper">
   <div class="container">
     <h1 style="text-align: center;">All Categories</h1>
     <div *ngIf="categories.length==0"> Category is not avaliable.</div>
@@ -27,9 +27,70 @@
           <div class="container" style="margin: 20px; text-align: center;">
             <button mat-raised-button color="primary" [routerLink]="'/admin/addCategory'">Add New Category</button>
           </div>
+
         </div>
     </div>
   </div>
-</div>
+</div> -->
 
+
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+       <mat-card>
+           <mat-card-header>
+               <mat-card-title>All Category</mat-card-title>
+           </mat-card-header>
+
+           <mat-card-content>
+            <table class="table">
+              <thead>
+                <tr class="tr-head">
+                  <th>Category</th>
+                  <th>Description</th>
+                  <th colspan="2">Action</th>
+                  <th></th>
+                </tr>
+              </thead>
+               <tbody>
+                <tr *ngFor="let c of categories">
+                  <td>
+                    {{c.title }}
+                  </td>
+                  <td>
+                    {{c.description }}
+                  </td>
+                  <td colspan="2">
+                    <a
+                    ><mat-icon
+                      class="edit"
+                      matTooltip="Edit Category"
+                      matTooltipClass="tooltip"
+                      >edit</mat-icon
+                    ></a
+                  >
+                  </td>
+                  <td>
+                    <a [routerLink]="'/admin/categories'" (click)="delete(c.cid)"
+                    ><mat-icon
+                      class="delete"
+                      matTooltip="Delete Category"
+                      matTooltipClass="tooltip"
+                      >delete</mat-icon
+                    ></a
+                  >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+           </mat-card-content>
+           <div class="container" style="margin: 20px; text-align: center;">
+            <button mat-raised-button color="primary" [routerLink]="'/admin/addCategory'">Add New Category</button>
+          </div>
+       </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
 
