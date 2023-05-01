@@ -1,4 +1,4 @@
-<mat-card style="margin-top: 10px" *ngFor="let c of quizees" class="card">
+<!-- <mat-card style="margin-top: 10px" *ngFor="let c of quizees" class="card">
   <mat-card-header>
     <div mat-card-avatar class="header-image"></div>
     <mat-card-title>{{ "Quize Name: " + c.title }}</mat-card-title>
@@ -53,4 +53,104 @@
   >
     Add New Quiz
   </button>
+</div> -->
+
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>All quizees</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <table class="table">
+              <thead>
+                <tr class="tr-head">
+                  <th>Category</th>
+                  <th>Quiz Name</th>
+                  <!-- <th>Description</th> -->
+
+                  <th>Marks</th>
+                  <th>Total Question</th>
+                  <th>Status</th>
+                  <th>All Question</th>
+                  <th>Update</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let c of quizees">
+                  <!-- {{c| json}} -->
+                  <td>
+                    {{ c.category.title }}
+                  </td>
+                  <td>
+                    {{ c.title }}
+                  </td>
+                  <!-- <td>
+                    {{ c.description }}
+                  </td> -->
+
+                  <td>
+                    {{ c.maxMarks }}
+                  </td>
+                  <td>
+                    {{ c.numberOfQuestions }}
+                  </td>
+                  <td>
+                    <p *ngIf="c.active" class="active">Active</p>
+                    <p *ngIf="!c.active" class="deactive">Deactive</p>
+                  </td>
+
+                  <td>
+                    <button
+                      mat-raised-button
+                      color="primary"
+                      [routerLink]="
+                        '/admin/viewQuestion/' + c.qId + '/' + c.title
+                      "
+                    >
+                      Questions
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                    [routerLink]="'/admin/quiz/' + c.qId"
+                    mat-raised-button
+                    color="accent"
+                    style="margin-left: 20px"
+                  >
+                    Update
+                  </button>
+                  </td>
+                  <td>
+                    <a [routerLink]="'/admin/quizzes'" (click)="delete(c.qId)"
+                    ><mat-icon
+                      class="delete"
+                      matTooltip="Delete Quiz"
+                      matTooltipClass="tooltip"
+                      >delete</mat-icon
+                    ></a
+                  >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </mat-card-content>
+          <div class="container" style="margin: 20px; text-align: center">
+            <button
+            mat-raised-button
+            color="primary"
+            style="margin-top: 20px"
+            [routerLink]="'/admin/addQuiz'"
+          >
+            Add New Quiz
+          </button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
 </div>
