@@ -32,4 +32,8 @@ public updateStatus(username:any, enabled:any){
   return  this.http.put(`${baseUrl}/api/user/enabled/${username}`,enabled);
 }
 
+public updateUser(username:any, user:any){
+      return this.http.put(`${baseUrl}/api/user/${username}`,user);
+}
+
 }

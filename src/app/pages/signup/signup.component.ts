@@ -59,7 +59,7 @@ export class SignupComponent implements OnInit {
       return;
     }
     else if (this.user.username.trim() == "" || this.user.username == null) {
-      this.snackBar.open("username is required", 'ok', {
+      this.snackBar.open("Username is required", 'ok', {
         duration: 3000,
         horizontalPosition: 'center'
       });
@@ -73,7 +73,7 @@ export class SignupComponent implements OnInit {
       return;
     }
     else if(! this.user.email.match(validRegex)){
-      this.snackBar.open("Invalid email format", 'ok', {
+      this.snackBar.open("Invalid Email format", 'ok', {
         duration: 3000,
         horizontalPosition: 'center'
       });
@@ -93,7 +93,7 @@ export class SignupComponent implements OnInit {
       });
     }
     else if(this.user.phone.toString().length != 10){
-      this.snackBar.open("Phon number must be 10 digit", 'ok', {
+      this.snackBar.open("Phone number must be 10 digit", 'ok', {
         duration: 3000,
         horizontalPosition: 'center'
       });

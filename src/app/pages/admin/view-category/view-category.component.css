@@ -77,3 +77,9 @@ tbody tr:hover{
   background-color: #c0aceefe;
   border-radius: 4px;
 }
+
+@media screen and (max-width: 900px) {
+  .table-box1{
+    overflow: scroll;
+  }
+}

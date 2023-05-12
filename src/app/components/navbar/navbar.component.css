@@ -18,8 +18,14 @@
 }
 
 .app-toolbar {
-  position: sticky;
-  position: -webkit-sticky; /* For macOS/iOS Safari */
-  top: 0; /* Sets the sticky toolbar to be on top */
-  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+  z-index: 2; /* Ensure that your app's content doesn't overlap the toolbar */
 }
+
+@media screen and (max-width: 900px){
+  .app-toolbar{
+   width: 100%
+  }
+  .app-toolbar .username{
+    display: none;
+  }
+ }

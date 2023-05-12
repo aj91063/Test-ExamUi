@@ -62,7 +62,7 @@ const routes: Routes = [
         component:UsertableComponent
       },
       {
-        path:'updateUser',
+        path:'updateUser/:username',
         component:UpdateUserComponent
       },
       {

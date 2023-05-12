@@ -1,1 +1,67 @@
-<p>update-user works!</p>
+
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>Update Profile</mat-card-title>
+      </mat-card-header>
+      <form (ngSubmit)="updateUser()">
+        <!-- {{user|json}} -->
+        <mat-card-content>
+          <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Email</mat-label>
+                <input
+                  [(ngModel)]="user.email"
+                  name="email"
+                  matInput
+                  placeholder="Email"
+                  required
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Phone Number</mat-label>
+                <input
+                  [(ngModel)]="user.phone"
+                  name="phone"
+                  matInput
+                  placeholder="Phone Number"
+                  type="number"
+                  required
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Enter New Password</mat-label>
+                <input
+                  [(ngModel)]="user.password"
+                  name="password"
+                  matInput
+                  placeholder="Enter New Password"
+                  required
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 offset-md-4">
+              <button  mat-raised-button color="primary" type="submit">Update</button>
+              <button class="ml20" mat-raised-button color="warn" [routerLink]="'/admin/profile'" type="button">Cancle</button>
+            </div>
+          </div>
+        </mat-card-content>
+      </form>
+    </mat-card>
+  </div>
+</div>

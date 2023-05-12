@@ -13,11 +13,11 @@ export class ProfileComponent implements OnInit {
 
   }
 
-public userData:any="";
+public userData:any;
   ngOnInit(): void {
-          this.login.getCurrentUser().subscribe((data)=>{
+          this.login.getCurrentUser().subscribe((data:any)=>{
                 this.userData=data;
-                console.log(this.userData);
+                //console.log(this.userData);
           });
           this.title.setTitle("Profile")
   }

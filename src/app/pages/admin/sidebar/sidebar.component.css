@@ -1,21 +1,16 @@
-.sticky{
-  height: 100%; /*Full-height: remove this if you want "auto" height */
-  width: 250px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+.menu-card{
+  height: 100%;
+  width: auto;
+  position: fixed;
+  z-index: 1;
+  top: 65px;
   left: 0;
-  /* background-color: #111; */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  overflow-y: auto;
-  margin-top: 30px;
-  padding-top: 20px;
 }
 
-@media screen and (max-height: 450px) {
+/* @media screen and (max-height: 450px) {
   .sticky {padding-top: 15px;}
   .sticky button {font-size: 18px;}
-}
+} */
 
 /* .card{
   background: linear-gradient(135deg, #71b7e6, #bc7ed4);
@@ -25,4 +20,42 @@
 
 span{
   color: white;
+}
+
+
+.horozontal-menu{
+  background-color:rgba(0,56,0,.9);
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+}
+.horozontal-menu ul li{
+  display: inline-block;
+  list-style-type: none;
+}
+.horozontal-menu ul li a{
+  text-decoration: none;
+  color: #FFF;
+  font-weight: bold;
+  font-size: large;
+  padding: 10px;
+}
+.horozontal-menu ul li a:hover{
+ background:rgba(0,255,0,.8);
+ border-radius:5px ;
+}
+
+
+
+@media only screen and (max-width: 900px){
+ .menu-card{
+  display: none;
+ }
+ .horozontal-menu{
+  display:block;
+  width: 100%;
+ }
+ .horozontal-menu ul li{
+  display:block;
+ }
 }

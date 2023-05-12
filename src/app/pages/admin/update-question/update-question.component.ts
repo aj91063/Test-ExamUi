@@ -72,7 +72,9 @@ export class UpdateQuestionComponent implements OnInit{
   }
 
 
-
+cancle(){
+  history.back();
+}
 
 
 }
