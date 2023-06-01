@@ -36,54 +36,84 @@
   </div>
   <ul class="nav-links">
     <li>
-      <a [routerLink]="'/admin'">
+      <a [routerLink]="'/admin'"
+      matTooltip="Dashboard"
+      matTooltipClass="tooltip"
+      matTooltipPosition="right"
+      >
         <i class="bx bx-collection"></i>
         <span class="link_name">Dashboard</span>
       </a>
     </li>
 
     <li>
-      <a [routerLink]="'/admin/profile'">
+      <a [routerLink]="'/admin/profile'"
+      matTooltip="Profile"
+      matTooltipClass="tooltip"
+      matTooltipPosition="right"
+      >
         <i class="bx bxs-user"></i>
         <span class="link_name">Profile</span>
       </a>
     </li>
 
     <li>
-      <a [routerLink]="'/admin/categories'">
+      <a [routerLink]="'/admin/categories'"matTooltip="Categories"
+      matTooltipClass="tooltip"
+      matTooltipPosition="right">
         <i class="bx bxs-category"></i>
         <span class="link_name">Categories</span>
       </a>
     </li>
 
     <li>
-      <a [routerLink]="'/admin/addCategory'">
+      <a [routerLink]="'/admin/addCategory'"
+      matTooltip="Add Category"
+      matTooltipClass="tooltip"
+      matTooltipPosition="right"
+      >
         <i class="bx bxs-add-to-queue"></i>
         <span class="link_name">Add Category</span>
       </a>
     </li>
     <li>
-      <a [routerLink]="'/admin/quizzes'">
+      <a [routerLink]="'/admin/quizzes'"
+      matTooltip="Quizzes"
+      matTooltipClass="tooltip"
+      matTooltipPosition="right"
+      >
         <i class='bx bx-help-circle' ></i>
         <span class="link_name">Quizzes</span>
       </a>
     </li>
 
     <li>
-      <a [routerLink]="'/admin/addQuiz'">
+      <a [routerLink]="'/admin/addQuiz'"
+      matTooltip="Add Quiz"
+      matTooltipClass="tooltip"
+      matTooltipPosition="right"
+      >
         <i class='bx bxs-plus-circle'></i>
         <span class="link_name">Add Quiz</span>
       </a>
     </li>
     <li>
-      <a [routerLink]="'/admin/userDetails'" >
+      <a [routerLink]="'/admin/userDetails'"
+      matTooltip="Users Detail"
+      matTooltipClass="tooltip"
+      matTooltipPosition="right"
+      >
         <i class='bx bxs-user-detail'></i>
         <span class="link_name">Users Detail</span>
       </a>
     </li>
 
     <li>
-      <a (click)="logout()">
+      <a (click)="logout()"
+      matTooltip="Logout"
+      matTooltipClass="tooltip"
+      matTooltipPosition="right"
+      >
         <i class="bx bx-log-out"></i>
         <span class="link_name">Logout</span>
       </a>
@@ -91,7 +121,7 @@
   </ul>
 </div>
 
-<section class="home-section" (click)="arrowClick()">
+<section class="home-section" (click)="toggleClass($event,'close')">
   <div class="home-content">
     <i class="bx bx-menu"></i>
     <div>

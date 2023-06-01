@@ -1,3 +1,4 @@
+import { RenderRow } from '@angular/cdk/table';
 import { Component } from '@angular/core';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { LoginService } from 'src/app/services/login.service';
@@ -28,21 +29,32 @@ export class SidebarComponent {
    window.location.reload();
   }
 
-  arrowClick(){
-    // let arrow = document.querySelectorAll(".arrow");
-    // for (var i = 0; i < arrow.length; i++) {
-    //   arrow[i].addEventListener("click", (e)=>{
-    //  let arrowParent = e.//selecting main parent of arrow
-    //  arrowParent.classList.toggle("showMenu");
-    //   });
-    // }
+  // arrowClick(){
+  //   // let arrow = document.querySelectorAll(".arrow");
+  //   // for (var i = 0; i < arrow.length; i++) {
+  //   //   arrow[i].addEventListener("click", (e)=>{
+  //   //  let arrowParent = e.//selecting main parent of arrow
+  //   //  arrowParent.classList.toggle("showMenu");
+  //   //   });
+  //   // }
+  //   let sidebar:any = document.querySelector(".sidebar");
+  //   let sidebarBtn:any = document.querySelector(".bx-menu");
+  //   console.log(sidebarBtn);
+  //   sidebarBtn.addEventListener("click", ()=>{
+  //     sidebar.classList.toggle("close");
+  //   });
+  // }
+
+
+  toggleClass(event: any, className: string) {
+    const hasClass = event.target.classList.contains(className);
     let sidebar:any = document.querySelector(".sidebar");
-    let sidebarBtn:any = document.querySelector(".bx-menu");
-    console.log(sidebarBtn);
-    sidebarBtn.addEventListener("click", ()=>{
-      sidebar.classList.toggle("close");
-    });
-  }
+    if (hasClass) {
+        sidebar.removeClass(className);
+    } else {
+        sidebar.classList.toggle(className);
+    }
+}
 
 }
 
