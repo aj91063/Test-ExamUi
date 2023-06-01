@@ -105,3 +105,18 @@ tbody tr:hover{
   }
 }
 
+.center-div{
+  position: absolute;
+  top: 10%;
+  width: 80%;
+  /* transform: translate(0, -50%); */
+}
+
+@media screen and (max-width: 500px) {
+  .center-div{
+    left:0;
+    width: 100%;
+    height: auto;
+  }
+}
+

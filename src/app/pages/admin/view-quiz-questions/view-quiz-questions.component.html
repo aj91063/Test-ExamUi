@@ -1,5 +1,5 @@
-<div class="bootstrap-wrapper">
-  <div class="container">
+<div class="bootstrap-wrapper center-div">
+  <div class="container ">
     <h1>Questions of {{ title }} Quiz</h1>
     <div *ngIf="question.length == 0">
       Question is not avaliable to the quiz: <b> {{ title }}</b>
@@ -15,7 +15,7 @@
             </div>
           </div>
         </div>
-        <mat-card *ngFor="let q of question; let i = index" class="mb10 card">
+        <mat-card *ngFor="let q of question; let i = index" class="mb10">
           <mat-card-content>
             <p>
               <b>Q{{ i + 1 + ") " }}</b>

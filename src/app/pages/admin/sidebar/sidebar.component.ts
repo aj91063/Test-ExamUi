@@ -28,4 +28,22 @@ export class SidebarComponent {
    window.location.reload();
   }
 
+  arrowClick(){
+    // let arrow = document.querySelectorAll(".arrow");
+    // for (var i = 0; i < arrow.length; i++) {
+    //   arrow[i].addEventListener("click", (e)=>{
+    //  let arrowParent = e.//selecting main parent of arrow
+    //  arrowParent.classList.toggle("showMenu");
+    //   });
+    // }
+    let sidebar:any = document.querySelector(".sidebar");
+    let sidebarBtn:any = document.querySelector(".bx-menu");
+    console.log(sidebarBtn);
+    sidebarBtn.addEventListener("click", ()=>{
+      sidebar.classList.toggle("close");
+    });
+  }
+
 }
+
+

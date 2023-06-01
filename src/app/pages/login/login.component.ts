@@ -46,6 +46,15 @@ loginData={
          // console.log("token set--->", localStorage.getItem('token'));
           this.login.getCurrentUser().subscribe(
             (user:any)=>{
+              user.password=undefined;
+              user.email=undefined;
+              user.enabled=undefined;
+              user.firstName=undefined;
+              user.gender=undefined;
+              user.id=undefined;
+              user.lastName=undefined;
+              user.phone=undefined;
+              user.profile=undefined;
               this.login.setUser(user)
               //console.log(user);
               //redirect to admin or user

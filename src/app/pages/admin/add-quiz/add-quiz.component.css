@@ -6,11 +6,7 @@
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
  */
-.card{
-  background: linear-gradient(135deg, #71b7e6, #bc7ed4);
-  box-shadow: 2px 2px 2px 2px #000;
-  /* margin: 50px; */
-}
+
 
  .full-width{
   width: 100%;
@@ -55,4 +51,21 @@
   border-radius: 5px;
   box-sizing: border-box;
   box-shadow: 1px 1px 1px 1px #000;
+}
+
+
+
+.center-div{
+  position: absolute;
+  top: 10%;
+  width: 80%;
+  /* transform: translate(0, -50%); */
+  background: var(--main-color);
+  box-shadow: 2px 2px 2px 2px #000;
+}
+@media screen and (max-width: 500px) {
+  .center-div{
+    left:0;
+    width: 100%;
+  }
 }

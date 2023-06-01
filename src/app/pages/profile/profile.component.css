@@ -4,6 +4,15 @@
  box-shadow: 1px 1px 3px 1px rgb(116, 115, 115);
  border-radius: 50%;
 } */
+.center-div{
+  position: absolute;
+  top:50px;
+  width: 80%;
+  /* transform: translate(0, -50%); */
+  background: var(--main-color);
+}
+
+
 .table{
   width: 100%;
   border-collapse: collapse;
@@ -12,7 +21,7 @@
 
 }
 .table tr td{
-  padding: 10px 30px;
+  padding: 5px 15px;
   text-align: center;
   text-transform: capitalize;
   border: .5px solid #646161;
@@ -104,4 +113,13 @@ table tr:nth-child(even){
   transform: scale(2);
   opacity: 0;
 
+}
+
+@media screen and (max-width : 500px) {
+  .center-div{
+    margin-top: 0;
+    left: 0;
+    overflow: scroll;
+    width: 100%;
+  }
 }

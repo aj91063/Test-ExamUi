@@ -5,7 +5,21 @@
   background-color: rgba(114, 112, 112, 0.4);
 }
 .card{
-  background: linear-gradient(135deg, #71b7e6, #bc7ed4);
-  box-shadow: 2px 2px 2px 2px #000;
-  /* margin: 50px; */
+  background: var(--main-color);
+  border: none;
+}
+.center-div{
+  position: absolute;
+  top: 8.5%;
+  width: 80%;
+  /* transform: translate(0, -50%); */
+  background: var(--body-color);
+
+}
+@media screen and (max-width: 500px) {
+  .center-div{
+    left:0;
+    margin-top:0;
+    width: 100%;
+  }
 }

@@ -33,17 +33,16 @@
   </div>
 </div> -->
 
-
-<div class="bootstrap-wrapper">
+<div class="bootstrap-wrapper center-div">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-       <mat-card class="table-box1">
-           <mat-card-header>
-               <mat-card-title>All Category</mat-card-title>
-           </mat-card-header>
+        <mat-card class="table-box1">
+          <mat-card-header>
+            <mat-card-title>All Category</mat-card-title>
+          </mat-card-header>
 
-           <mat-card-content>
+          <mat-card-content>
             <table class="table">
               <thead>
                 <tr class="tr-head">
@@ -53,44 +52,58 @@
                   <th></th>
                 </tr>
               </thead>
-               <tbody>
+              <tbody>
                 <tr *ngFor="let c of categories">
                   <td>
-                    {{c.title }}
+                    {{ c.title }}
                   </td>
                   <td>
-                    {{c.description }}
+
+                      {{ c.description | slice:0:30 }}
+
+                    <span class="tooltip">
+                      <i class="bx bxs-help-circle" style="font-size: 20px;"></i>
+                      <span class="tooltiptext"> {{ c.description }}</span>
+                    </span>
                   </td>
+
                   <td colspan="2">
                     <a
-                    ><mat-icon
-                      class="edit"
-                      matTooltip="Edit Category"
-                      matTooltipClass="tooltip"
-                      >edit</mat-icon
-                    ></a
-                  >
+                      ><mat-icon
+                        class="edit"
+                        matTooltip="Edit Category"
+                        matTooltipClass="tooltip"
+                        >edit</mat-icon
+                      ></a
+                    >
                   </td>
                   <td>
-                    <a [routerLink]="'/admin/categories'" (click)="delete(c.cid)"
-                    ><mat-icon
-                      class="delete"
-                      matTooltip="Delete Category"
-                      matTooltipClass="tooltip"
-                      >delete</mat-icon
-                    ></a
-                  >
+                    <a
+                      [routerLink]="'/admin/categories'"
+                      (click)="delete(c.cid)"
+                      ><mat-icon
+                        class="delete"
+                        matTooltip="Delete Category"
+                        matTooltipClass="tooltip"
+                        >delete</mat-icon
+                      ></a
+                    >
                   </td>
                 </tr>
               </tbody>
             </table>
-           </mat-card-content>
-           <div class="container" style="margin: 20px; text-align: center;">
-            <button mat-raised-button color="primary" [routerLink]="'/admin/addCategory'">Add New Category</button>
+          </mat-card-content>
+          <div class="container" style="margin: 20px; text-align: center">
+            <button
+              mat-raised-button
+              color="primary"
+              [routerLink]="'/admin/addCategory'"
+            >
+              Add New Category
+            </button>
           </div>
-       </mat-card>
+        </mat-card>
       </div>
     </div>
   </div>
 </div>
-

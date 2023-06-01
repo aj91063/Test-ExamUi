@@ -1,10 +1,12 @@
-/* .card{
-  background: rgba(255, 255, 255, 0.4);
-  display: block;
+
+
+.center-div{
+  position: absolute;
+  top: 60px;
+  width: 80%;
+  /* transform: translate(0, -50%); */
 }
-.mb10{
-  margin-bottom:4px;
-} */
+
 
 .deleteIcon{
   color: rgb(231, 42, 42);
@@ -25,6 +27,7 @@ table, th, td{
   padding: 1rem;
 
 }
+
 table{
   overflow: auto;
   width: 100%;
@@ -78,8 +81,48 @@ tbody tr:hover{
   border-radius: 4px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px ) {
   .table-box1{
     overflow: scroll;
   }
+}
+@media screen and (max-width: 500px) {
+  .center-div{
+    left:0;
+    margin-top:0px;
+    width: 100%;
+  }
+
+}
+
+
+
+
+/*category hover discription */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  font-size: 16px;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

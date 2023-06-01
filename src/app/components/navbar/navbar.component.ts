@@ -11,7 +11,7 @@ export class NavbarComponent {
        constructor(public login :LoginService){}
 
        isLoggedIn=false;
-       user=null;
+       user:any=null;
 
        ngOnInit():void{
           this.isLoggedIn=this.login.isLoggedIn();

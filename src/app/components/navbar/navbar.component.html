@@ -7,11 +7,23 @@
     style=" background-color:#FF7E06; color:#fff;"><mat-icon>login</mat-icon>Login</a>
 
     <a
-    *ngIf="isLoggedIn && user"
+    *ngIf="isLoggedIn && user.authorities[0].authority =='ADMIN'"
     mat-button class="field-margin-right username" type="button"
-    style=" background-color:#93d84e; color:#fff;font-weight: 500;"><mat-icon>person</mat-icon>
-    {{login.getUser().username.toUpperCase()}}</a>
+    style=" background-color:#93d84e; color:#fff;font-weight: 500;"
+    [routerLink]="'/admin'">
+    <mat-icon>person</mat-icon>
+    {{login.getUser().username.toUpperCase()}}
 
+  </a>
+  <a
+    *ngIf="isLoggedIn && user.authorities[0].authority =='NORMAL'"
+    mat-button class="field-margin-right username" type="button"
+    style=" background-color:#93d84e; color:#fff;font-weight: 500;"
+    [routerLink]="'/userDashboard'">
+    <mat-icon>person</mat-icon>
+    {{login.getUser().username.toUpperCase()}}
+
+  </a>
     <a
     *ngIf="isLoggedIn"
     (click)="logout()"

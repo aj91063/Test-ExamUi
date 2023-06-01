@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root{
+  --main-color:#c0aceefe;
+  --body-color:#E4E9F7;
+  --menu-hover:#4a4a4d;
+}
+
+
+
 *{
   margin: 0;
   padding: 0;
@@ -8,7 +16,7 @@
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #F0F0F0;
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: var(--body-color);
 
 }
 
@@ -42,8 +50,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
   margin-right: 20px;
 }
 
-.card{
-  background: linear-gradient(135deg, #71b7e6, #bc7ed4);
-  box-shadow: 2px 2px 2px 2px #000;
-  /* margin: 50px; */
-}
+
