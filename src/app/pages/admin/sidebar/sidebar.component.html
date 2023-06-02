@@ -121,9 +121,9 @@
   </ul>
 </div>
 
-<section class="home-section" (click)="toggleClass($event,'close')">
+<section class="home-section" >
   <div class="home-content">
-    <i class="bx bx-menu"></i>
+    <i class="bx bx-menu" (click)="toggleClass($event,'close')"></i>
     <div>
       <router-outlet></router-outlet>
     </div>
