@@ -31,8 +31,13 @@ export class SignupComponent implements OnInit {
        //let oneusername:String[];
        this.userService.getUserByUsername(this.user.username).subscribe(
         (data:any)=>{
-          if(data != null){
+          console.log(data);
+          if(data.username != null){
             this.snackBar.open(`${data.username} already exists, Try with anoter username.`,'ok',
+            {duration:4000,
+            })
+           }else{
+            this.snackBar.open(`Username is required.`,'ok',
             {duration:4000,
             })
            }
@@ -58,7 +63,7 @@ export class SignupComponent implements OnInit {
       });
       return;
     }
-    else if (this.user.username.trim() == "" || this.user.username == null) {
+    else if (this.user.username.trim() == '' || this.user.username == null) {
       this.snackBar.open("Username is required", 'ok', {
         duration: 3000,
         horizontalPosition: 'center'
