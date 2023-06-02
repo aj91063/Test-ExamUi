@@ -1,0 +1,25 @@
+<mat-card class="card center-div">
+  <h1 style="margin: 10px;"> Update Category</h1>
+  <mat-card-content class="text-center" style="margin-top: 5%;">
+    <form (ngSubmit)="updateCategoryForm()">
+      <mat-form-field style="width: 80%;" appearance="fill">
+        <mat-label>Title</mat-label>
+        <input [(ngModel)]="category.title" type="text" name="tilte" matInput placeholder="Enter Title" required>
+      </mat-form-field>
+      <br/>
+      <mat-form-field style="width: 80%;" appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea [(ngModel)]="category.description" name="description" matInput placeholder="Enter Description" required rows="5"></textarea>
+      </mat-form-field>
+
+      <div class="container text-center" style="padding:1px">
+        <button mat-raised-button class="field-margin-right" type="submit"
+            style=" background-color:#93d84e; color:#fff;">Update Category</button>
+        <button mat-raised-button type="button" (click)="backbtn()"
+            style=" background-color:#FF0A0A; color: #fff; ">Cancel</button>
+    </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>
+

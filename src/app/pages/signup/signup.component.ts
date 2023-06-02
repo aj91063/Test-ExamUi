@@ -122,12 +122,12 @@ export class SignupComponent implements OnInit {
 
                  Swal.fire({
                    title: '',
-                   text: `Account is created successfully. ${this.user.username}`,
+                   html: `Account is created successfully: <b>${this.user.username}</b>`,
                    icon: 'success',
                    confirmButtonText: 'Login',
-                   confirmButtonColor:'#FF7E06',
+                   confirmButtonColor:'#3252a8',
                    cancelButtonColor:'#d33',
-                   showCancelButton:true
+                   showCancelButton:false
                  }).then((result)=>{
                         if(result.isConfirmed){
                             this.router.navigate(["login"]);
